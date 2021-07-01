@@ -1,26 +1,9 @@
+const path = require("path");
 const express = require("express");
-
 const app = express();
-var path = require("path");
-const port = process.env.PORT || 3000;
-app.use(express.static("public"));
-
-// sendFile will go here
-
-app.listen(port);
-console.log("Server started at http://localhost:" + port);
-// Without middleware
-app.get("/", function (req, res) {
-  var options = {
-    root: path.join(__dirname),
-  };
-
-  var fileName = "index.html";
-  res.sendFile(fileName, options, function (err) {
-    if (err) {
-      next(err);
-    } else {
-      console.log("Sent:", fileName);
-    }
-  });
+app.use(express.static(__dirname + "/public"));
+app.get("/home", function (req, res) {
+  res.sendFile(path.join(__dirname + "/index.html"));
 });
+app.listen(3000);
+console.log("Now the server is running in url: http://127.0.0.1:3333");
