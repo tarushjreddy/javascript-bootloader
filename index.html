@@ -5,71 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="public/index.css" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
-    /* font-family: 'Lato', sans-serif; */
-    * {
-      font-family: "Lato", sans-serif;
-      margin: 0;
-    }
-    .coming_page {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100vh;
-    }
-    .main_container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      border: 2px solid black !important;
-      width: 100%;
-    }
-    .Main_heading {
-      font-size: 3.5rem;
-      margin: 1rem;
-    }
-    .timer_section {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
 
-      width: 50%;
-      justify-content: space-evenly;
-    }
-    .day_container {
-      margin: 1.5rem;
-    }
-    .Time_container_day {
-      margin-bottom: 1.5rem;
-      margin-top: 1rem;
-    }
-    .Time_container_seconds {
-      margin-bottom: 1.5rem;
-      margin-top: 1rem;
-    }
-    .Time_container_minutes {
-      margin-bottom: 1.5rem;
-      margin-top: 1rem;
-    }
-    .day_container {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-    .Time_container_Hour {
-      margin-bottom: 1.5rem;
-      margin-top: 1rem;
-    }
-    .Time_container_milli {
-      margin-bottom: 1.5rem;
-      margin-top: 1rem;
-    }
-  </style>
   <body>
     <div class="coming_page">
       <div class="main_container">
@@ -81,50 +19,25 @@
           </div>
           <div class="day_container">
             <h3 class="Time_container_Hour">Time</h3>
-            <p class="naming">Hours</p>
+            <p class="naming">Hrs</p>
           </div>
 
           <div class="day_container">
             <h3 class="Time_container_minutes">Time</h3>
-            <p class="naming">Minutes</p>
+            <p class="naming">Min</p>
           </div>
           <div class="day_container">
             <h3 class="Time_container_seconds">Time</h3>
-            <p class="naming">Seconds</p>
+            <p class="naming">Sec</p>
           </div>
           <div class="day_container">
             <h3 class="Time_container_milli">Time</h3>
-            <p class="naming">Milli</p>
+            <p class="naming">Mil</p>
           </div>
         </div>
       </div>
-      <img src="" alt="" srcset="" />
     </div>
   </body>
-  <script>
-    const countdown = () => {
-      const countDate = new Date("Jul 27, 2021 21:00:00 ").getTime();
-      const now = new Date().getTime();
-      const gap = countDate - now;
-      const milli = 1;
-      const seconds = 1000 * milli;
-      const minutes = seconds * 60;
-      const hour = minutes * 60;
-      const day = hour * 24;
 
-      const textDay = Math.floor(gap / day);
-      const textHour = Math.floor((gap % day) / hour);
-      const textMinute = Math.floor((gap % hour) / minutes);
-      const textSeconds = Math.floor((gap % minutes) / seconds);
-      const textmill = Math.floor((gap % seconds) / milli);
-
-      document.querySelector(".Time_container_day").innerText = textDay;
-      document.querySelector(".Time_container_Hour").innerText = textHour;
-      document.querySelector(".Time_container_minutes").innerText = textMinute;
-      document.querySelector(".Time_container_seconds").innerText = textSeconds;
-      document.querySelector(".Time_container_milli").innerText = textmill;
-    };
-    setInterval(countdown, 10);
-  </script>
-  <script src="public//app.js"></script>
+  <script src="js/app.js"></script>
 </html>
